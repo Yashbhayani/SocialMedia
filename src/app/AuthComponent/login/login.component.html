@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="alert alert-{{Color}} alert-dismissible fade show" [hidden]="AlertVal" role="alert">
+    {{Message}}
+    <button type="button" class="btn-close" [hidden]="AlertVal" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+<div class="container-lg p-5">
+  <form class="justify-content-center" [formGroup]="LoginForm" (ngSubmit)="Signin()">
+    <div class="row  align-items-center">
+      <div class="col-sm-1 col-form-label">
+        <label class="col-form-label">Email Id</label>
+      </div>
+      <div class="col-auto">
+        <input type="email" class="form-control" formControlName="Email" size="30">
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-sm-1 col-form-label">
+        <label for="inputPassword6" class="col-form-label">Password</label>
+      </div>
+      <div class="col-auto">
+        <input [type]="hide ? 'password' : 'text'" class="form-control" formControlName="Password" aria-describedby="passwordHelpInline" size="30">
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-primary" type="button" (click)="Shoandhide()">
+          <i [className]="hide ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-sm-1 col-form-label">
+      </div>
+      <div class="col-auto p-3">
+        <button type="submit" class="btn btn-outline-primary" [disabled]="LoginForm.invalid">Sign in</button>
+      </div>
+    </div>
+  </form>
+</div>

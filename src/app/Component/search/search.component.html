@@ -1,0 +1,47 @@
+<div class="container text-center">
+  <form class="d-flex justify-content-center" [formGroup]="SearchhForm" (ngSubmit)="SearchData()">
+    <input class="form-control me-2" type="search" formControlName="Search" style="width: 30%;" placeholder="Search"
+      aria-label="Search">
+    <button class="btn btn-outline-success me-2" type="submit" [disabled]="SearchhForm.invalid">Search</button>
+  </form>
+</div>
+
+
+
+<div class="container mt-4 text-center" *ngIf="SearchList.length == 0">
+  <h1>No Friend Request</h1>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div *ngFor="let item of SearchList">
+        <div class="card mb-3">
+          <div class="card-body d-flex align-items-center">
+            <img src="https://localhost:44329/resources/{{item.image}}" alt="User 1"
+              class="user-image rounded-circle me-3" width="50" height="50">
+            <div>
+              <h5 class="card-title">{{item.firstName}} {{item.lastName}}</h5>
+              <p class="card-text">{{item.emial}}</p>
+            </div>
+            <div class="ms-auto">
+              <div *ngIf="item.status == 'R'">
+                <button type="button" class="btn btn-warning" (click)="Remove(item.userId)">Remove</button>
+              </div>
+              <div *ngIf="item.status == 'AC'">
+                <button type="button" class="btn btn-primary me-2" (click)="Accept(item.userId)">Accept</button>
+                <button type="button"  class="btn btn-danger me-2" (click)="Cancle(item.userId)">Cancle</button>
+              </div>
+              <div *ngIf="item.status == 'C'">
+                <button type="button" class="btn btn-danger" (click)="CancleFriendRequest(item.userId)">Cancle</button>
+              </div>
+              <div *ngIf="item.status == 'Add Friend'">
+                <button type="button" class="btn btn-info" (click)="SendFriendRequest(item.userId)" >Add Friend</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>

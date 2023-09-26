@@ -1,0 +1,25 @@
+<div class="container mt-4 text-center"  *ngIf="FriendRequestList.length == 0">
+  <h1>No Friend Request</h1>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div *ngFor="let item of FriendRequestList">
+        <div class="card mb-3">
+          <div class="card-body d-flex align-items-center">
+            <img src="https://localhost:44329/resources/{{item.image}}" alt="User 1" class="user-image rounded-circle me-3" width="50" height="50">
+            <div>
+              <h5 class="card-title">{{item.firstName}} {{item.lastName}}</h5>
+              <p class="card-text">{{item.email }}</p>
+            </div>
+            <div class="ms-auto">
+              <button class="btn btn-primary me-2" (click)="Accept(item.userId)">Accept</button>
+              <button class="btn btn-danger me-2" (click)="Remove(item.userId)">Cancle</button>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,145 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the post container */
+.post {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+}
+
+/* Style user information section */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details h2 {
+  font-size: 1.2rem;
+}
+
+/* Style post image */
+.post-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+/* Style post actions (like, comment, share buttons) */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-actions div {
+  cursor: pointer;
+}
+
+/* Style post caption and comments */
+.post-caption h3 {
+  font-weight: bold;
+}
+
+.comments {
+  margin-bottom: 10px;
+}
+
+.comment h4 {
+  font-weight: bold;
+}
+
+/* Style add comment section */
+.add-comment {
+  display: flex;
+  align-items: center;
+}
+
+.add-comment input {
+  flex-grow: 1;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.add-comment button {
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon-large {
+  font-size: 24px;
+}
+
+
+.comment-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.comment-content {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+.ex1 {
+  background-color: transparent;
+  width: auto;
+  height: 420px;
+  overflow: auto;
+  align-items: center;
+  margin-top: 0%;
+}
+
+.ex1::-webkit-scrollbar {
+  width: 5px;
+  height: 20px;
+}
+
+
+.ex1::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.ex1::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.ex1::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+
+.garuda{
+  margin: right;
+}

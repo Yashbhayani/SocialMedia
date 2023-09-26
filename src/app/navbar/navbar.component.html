@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" (onload)="checkfiunction()">
+  <div class="container-fluid">
+    <a class="navbar-brand">FaceBook</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="login_Active" (onload)="checkfiunction()">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/addpost">Add Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/friendRequestList">Friend Request</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/friendList">Friend List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/sendFriendRequestList">Send FriendRequest List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/search">search User</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="d-flex navbar-nav me-auto mb-2 mb-lg-0" role="search" *ngIf="login_Active" (onload)="checkfiunction()">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" aria-current="page" >{{Email}}</a>
+      </li>
+      <li class="nav-item">
+
+      <a class="btn btn-outline-primary" color="transparent" (click)="Logout()">
+        Logout
+       </a>
+      </li>
+
+    </ul>
+    <ul class="d-flex navbar-nav me-auto mb-2 mb-lg-0" role="search" *ngIf="login_Not_Active" (onload)="checkfiunction()">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="login">Login</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="signup">Sign Up</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid p-3">
+  <router-outlet></router-outlet>
+</div>

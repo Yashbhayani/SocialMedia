@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="alert alert-{{Color}} alert-dismissible fade show" [hidden]="AlertVal" role="alert">
+    {{Message}}
+    <button type="button" class="btn-close" [hidden]="AlertVal" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+<div class="container-lg p-5">
+  <form class="justify-content-center" [formGroup]="PostForm" (ngSubmit)="AddPost()" >
+    <div class="col-md-10">
+      <div class="input-group">
+        <label for="imageupload" class="mx-5">
+          <img [src]="!image ? imagedata_1 : image"  alt="Cinque Terre" width="300" height="300" />
+        </label>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" id="imageupload"  formControlName="Image"
+          style="display: none; visibility: hidden" />
+      </div>
+    </div>
+
+    <div class="row g-3 p-3">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">Description</label>
+        <textarea  type="text" class="form-control" id="firstName" formControlName="Description"></textarea>
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-auto p-3">
+        <button type="submit" class="btn btn-outline-primary" [disabled]="!PostForm.value.Image">Uplode</button>
+      </div>
+    </div>
+  </form>
+</div>
